@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spark</title>
+  </head>
+  <body>
+    <input id="prompt" value="你是谁？" />
+    <button id="submit">提交</button>
+    <div id="answer"></div>
+
+    <script src="../dist/spark.js"></script>
+    <script>
+      const promptInput = document.getElementById("prompt");
+      const submitBtn = document.getElementById("submit");
+      const answerDiv = document.getElementById("answer");
+
+      submitBtn.addEventListener("click", async function () {
+        answerDiv.innerText = "";
+        const { ModelVersion, SparkClient, ChatMessage } = spark;
+        const AppId = "";
+        const APIKey = "";
+        const APISecret = "";
+
+        const model = ModelVersion.V2;
+        const messages = [ChatMessage.fromUser(promptInput.value)];
+        
+        var client = new SparkClient(AppId, APIKey, APISecret);
+        await client.chatAsync(
+          model,
+          messages,
+          (value) => {
+            answerDiv.innerText += value.text;
+            console.log(value);
+          },
+          {},
+          "gy"
+        );
+      });
+    </script>
+  </body>
+</html>
