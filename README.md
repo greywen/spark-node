@@ -1,6 +1,6 @@
 **[English](README_EN.md)** | **简体中文**
 
-`gy-spark-node`是一个非官方的开源项目，提供 SparkDesk WebSocket API (https://console.xfyun.cn/services/cbm) 的 Nodejs SDK。现在已支持 ModelVersion，用户可以选择包括 V2 模型在内的各种版本模型。上游文档地址：https://www.xfyun.cn/doc/spark/Guide.html
+`spark-node-sdk`是一个非官方的开源项目，提供 SparkDesk WebSocket API (https://console.xfyun.cn/services/cbm) 的 Nodejs SDK。现在已支持 ModelVersion，用户可以选择包括 V2 模型在内的各种版本模型。上游文档地址：https://www.xfyun.cn/doc/spark/Guide.html
 
 这个项目可以用来开发能够用自然语言与用户交流的聊天机器人和虚拟助手。
 
@@ -15,7 +15,7 @@
 ## 安装
 
 ```
-npm install gy-node-spark
+npm install spark-node-sdk
 ```
 
 ## 使用方法
@@ -99,4 +99,4 @@ console.log(content);
 
 ## 许可证
 
-gy-node-spark 遵循 MIT 许可证。 请参阅[LICENSE.txt](LICENSE.txt)文件以获取更多信息。
+spark-node-sdk 遵循 MIT 许可证。 请参阅[LICENSE.txt](LICENSE.txt)文件以获取更多信息。

@@ -1,5 +1,5 @@
 {
-  "name": "gy-spark-node",
+  "name": "spark-node-sdk",
   "version": "0.0.2",
   "description": "讯飞星火大模型非官方 Nodejs SDK Xunfei's 'Xinghuo' SparkDesk big model unofficial sdk for Nodejs",
   "main": "dist/spark.js",
