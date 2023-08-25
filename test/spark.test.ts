@@ -1,4 +1,4 @@
-import { ModelVersion, SparkClient, ChatMessage } from "gy-spark-node";
+import { ModelVersion, SparkClient, ChatMessage } from "../dist/spark";
 import { IChatResponse } from "../dist/type";
 
 describe("spark test", () => {
