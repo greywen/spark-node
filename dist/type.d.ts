@@ -1,14 +1,17 @@
 export declare enum ModelVersion {
     V1_5 = "V1_5",
-    V2 = "V2"
+    V2 = "V2",
+    V3 = "V3"
 }
 export declare const ModelVersionUrl: {
     V1_5: string;
     V2: string;
+    V3: string;
 };
 export declare const ChatDomain: {
     V1_5: string;
     V2: string;
+    V3: string;
 };
 export declare enum MessageRole {
     user = "user",
