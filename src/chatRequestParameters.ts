@@ -1,4 +1,4 @@
-export class ChatRequestParametes {
+export class ChatRequestParameters {
   constructor(
     public temperature: number = 0.5,
     public max_tokens: number = 2048,

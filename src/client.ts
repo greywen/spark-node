@@ -8,7 +8,7 @@ import {
   ModelVersion,
   ModelVersionUrl,
 } from "./type";
-import { ChatRequestParametes } from "./chatRequestParametes";
+import { ChatRequestParameters } from "./chatRequestParameters";
 import createWebSocket from "./createWebSocket";
 
 export class SparkClient {
@@ -35,94 +35,7 @@ export class SparkClient {
     const authorization = btoa(authorizationOrigin);
     return `${url}?authorization=${authorization}&date=${date}&host=${host}`;
   }
-
-  // chatAsStream(
-  //   model: ModelVersion = ModelVersion.V1_5,
-  //   messages: IChatMessage[],
-  //   parameters?: ChatRequestParametes,
-  //   uid?: string
-  // ) {
-  //   let params = {
-  //     header: {
-  //       app_id: this.appId,
-  //       uid: uid,
-  //     },
-  //     parameter: {
-  //       chat: {
-  //         domain: ChatDomain[model],
-  //         ...parameters,
-  //       },
-  //     },
-  //     payload: {
-  //       message: {
-  //         text: messages,
-  //       },
-  //     },
-  //   };
-
-  //   const url = this.getAuthorizationUrl(model);
-  //   let ws = createWebSocket(url);
-
-  //   const stream = new ReadableStream<IChatResponse>({
-  //     start(controller) {
-  //       ws.onmessage = (event) => {
-  //         function close() {
-  //           ws.close();
-  //           controller.close();
-  //         }
-
-  //         const resp = JSON.parse(event.data) as ISparkChatResponse;
-  //         if (resp.header.code !== 0) {
-  //           throw new Error(
-  //             `code: ${resp.header.code}, sid: ${resp.header.sid}, message: ${resp.header.message}`
-  //           );
-  //         }
-
-  //         const text = resp.payload.choices.text
-  //           .map((t) => t.content)
-  //           .join(" ");
-  //         const result = {
-  //           text,
-  //           uasge: resp.payload.usage?.text || null,
-  //         };
-
-  //         controller.enqueue(result);
-
-  //         if (resp.header.status === 2) {
-  //           close();
-  //         }
-  //       };
-
-  //       ws.onopen = () => {
-  //         ws.send(JSON.stringify(params));
-  //       };
-
-  //       ws.onerror = (event) => {
-  //         throw new Error(JSON.stringify(event));
-  //       };
-  //     },
-  //   });
-  //   return stream;
-  // }
-
-  // async chatAsync(
-  //   model: ModelVersion = ModelVersion.V1_5,
-  //   messages: IChatMessage[],
-  //   callback: (result: IChatResponse) => void,
-  //   parameters?: ChatRequestParametes,
-  //   uid?: string
-  // ) {
-  //   const stream = this.chatAsStream(model, messages, parameters, uid);
-  //   const reader = await stream.getReader();
-  //   while (true) {
-  //     const { done, value } = await reader.read();
-  //     if (done) {
-  //       break;
-  //     }
-  //     callback(value);
-  //   }
-  // }
-
+  
   /**
    * 异步聊天方法，使用回调来处理聊天响应。
    * Asynchronous chat method that uses a callback to handle chat responses.
@@ -151,7 +64,7 @@ export class SparkClient {
     model: ModelVersion = ModelVersion.V1_5,
     messages: IChatMessage[],
     callback: (result: IChatResponse) => void,
-    parameters?: ChatRequestParametes,
+    parameters?: ChatRequestParameters,
     uid?: string,
     abortController?: AbortController
   ) {
@@ -194,7 +107,7 @@ export class SparkClient {
   *chatAsStreamAsync(
     model: ModelVersion = ModelVersion.V1_5,
     messages: IChatMessage[],
-    parameters?: ChatRequestParametes,
+    parameters?: ChatRequestParameters,
     uid?: string,
     abortController?: AbortController
   ): Generator<Promise<IChatResponse>> {

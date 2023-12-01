@@ -1,5 +1,5 @@
 import { IChatMessage, IChatResponse, ModelVersion } from "./type";
-import { ChatRequestParametes } from "./chatRequestParametes";
+import { ChatRequestParameters } from "./chatRequestParameters";
 export declare class SparkClient {
     private appId;
     private apiKey;
@@ -29,7 +29,7 @@ export declare class SparkClient {
      * @param abortController Optional AbortController instance used to abort this request.
      *
      */
-    chatAsync(model: ModelVersion, messages: IChatMessage[], callback: (result: IChatResponse) => void, parameters?: ChatRequestParametes, uid?: string, abortController?: AbortController): Promise<void>;
+    chatAsync(model: ModelVersion, messages: IChatMessage[], callback: (result: IChatResponse) => void, parameters?: ChatRequestParameters, uid?: string, abortController?: AbortController): Promise<void>;
     /**
      * 异步实时聊天流方法。
      * Asynchronous real-time chat stream method.
@@ -53,5 +53,5 @@ export declare class SparkClient {
      * @return Returns a Generator that yields a Promise that resolves to a chat response.
      *
      */
-    chatAsStreamAsync(model: ModelVersion, messages: IChatMessage[], parameters?: ChatRequestParametes, uid?: string, abortController?: AbortController): Generator<Promise<IChatResponse>>;
+    chatAsStreamAsync(model: ModelVersion, messages: IChatMessage[], parameters?: ChatRequestParameters, uid?: string, abortController?: AbortController): Generator<Promise<IChatResponse>>;
 }

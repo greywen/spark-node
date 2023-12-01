@@ -1,6 +1,6 @@
 {
   "name": "spark-node-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "讯飞星火大模型非官方 Nodejs SDK Xunfei's 'Xinghuo' SparkDesk big model unofficial sdk for Nodejs",
   "main": "dist/spark.js",
   "types": "dist/spark.d.ts",
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gy2x/spark-node"
+    "url": "https://github.com/greywen/spark-node"
   },
   "author": "gy gray.wen@outlook.com",
   "license": "ISC",
