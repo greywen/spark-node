@@ -2,18 +2,21 @@ export enum ModelVersion {
   V1_5 = "V1_5",
   V2 = "V2",
   V3 = "V3",
+  V3_5 = "V3_5",
 }
 
 export const ModelVersionUrl = {
   [ModelVersion.V1_5]: "wss://spark-api.xf-yun.com/v1.1/chat",
   [ModelVersion.V2]: "wss://spark-api.xf-yun.com/v2.1/chat",
   [ModelVersion.V3]: "wss://spark-api.xf-yun.com/v3.1/chat",
+  [ModelVersion.V3_5]: "wss://spark-api.xf-yun.com/v3.5/chat",
 };
 
 export const ChatDomain = {
   [ModelVersion.V1_5]: "general",
   [ModelVersion.V2]: "generalv2",
   [ModelVersion.V3]: "generalv3",
+  [ModelVersion.V3_5]: "generalv3.5",
 };
 
 export enum MessageRole {
